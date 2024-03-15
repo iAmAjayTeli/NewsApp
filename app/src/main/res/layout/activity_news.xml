@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".UI.NewsActivity">
+
+        <FrameLayout
+            android:id="@+id/flFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomNavigationView">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/newsNavHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
+        </FrameLayout>
+
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemIconSize="16dp"
+                android:textSize="14dp"
+                app:itemIconTint="@color/white"
+                app:itemTextColor="@color/white"
+                app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+                android:background="@color/purple"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_navigation" />
+
+
+
+    </RelativeLayout>
+
+</layout>
