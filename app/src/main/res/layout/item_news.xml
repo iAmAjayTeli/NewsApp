@@ -44,7 +44,7 @@
         android:ellipsize="end"
         android:maxLines="2"
        android:text="@{article.title}"
-        android:textColor="@color/black"
+        android:textColor="@color/color_textview"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
@@ -60,7 +60,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="@{article.description}"
-        android:textColor="@color/black"
+        android:textColor="@color/color_textview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/articleImage"
         app:layout_constraintTop_toBottomOf="@+id/articleTitle" />
@@ -73,7 +73,7 @@
         android:text="@{article.publishedAt}"
         android:textSize="11sp"
         android:layout_marginStart="8dp"
-        android:textColor="@color/black"
+        android:textColor="@color/color_textview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/articleDescription" />
 

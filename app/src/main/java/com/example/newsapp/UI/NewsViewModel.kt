@@ -11,6 +11,7 @@ import com.example.newsapp.Util.Resource
 import com.example.newsapp.models.Article
 import com.example.newsapp.models.NewsResponse
 import com.example.newsapp.repository.NewsRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
@@ -31,11 +32,11 @@ class NewsViewModel(val app: Application, val repository: NewsRepository) : Andr
         getHeadlines("us")
     }
 
-    fun getHeadlines(countryCode: String)=viewModelScope.launch {
+    fun getHeadlines(countryCode: String)=viewModelScope.launch(Dispatchers.IO) {
         headlineInternet(countryCode)
     }
 
-    fun searchNews(searchQuery : String)=viewModelScope.launch {
+    fun searchNews(searchQuery : String)=viewModelScope.launch(Dispatchers.IO)  {
         searchNewsInternet(searchQuery)
     }
 
@@ -85,7 +86,7 @@ class NewsViewModel(val app: Application, val repository: NewsRepository) : Andr
    }
 
     //add to favourite method
-    fun addToFavourite(article: Article)=viewModelScope.launch {
+    fun addToFavourite(article: Article)=viewModelScope.launch(Dispatchers.IO)  {
         repository.insert(article)
     }
 
@@ -93,7 +94,7 @@ class NewsViewModel(val app: Application, val repository: NewsRepository) : Andr
     fun getFavouriteNews()=repository.getAllArticles()
 
     //delete article method
-    fun deleteArticle(article: Article)=viewModelScope.launch {
+    fun deleteArticle(article: Article)=viewModelScope.launch(Dispatchers.IO)  {
         repository.delete(article)
     }
 

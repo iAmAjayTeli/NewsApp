@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#593c9f</color>
     <color name="yellow">#ffc000</color>
+
+    <color name="color_textview">@color/black</color>
+    <color name="color_background">@color/white</color>
 </resources>

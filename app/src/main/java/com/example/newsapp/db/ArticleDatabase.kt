@@ -9,7 +9,7 @@ import com.example.newsapp.models.Article
 import java.util.concurrent.locks.Lock
 
 
-@Database(entities = [Article::class], version = 1)
+@Database(entities = [Article::class], version = 1, exportSchema = false)
 @TypeConverters(Converter::class)
 abstract class ArticleDatabase : RoomDatabase() {
 
