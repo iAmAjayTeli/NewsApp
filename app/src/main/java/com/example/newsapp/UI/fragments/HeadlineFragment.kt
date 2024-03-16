@@ -175,8 +175,7 @@ lateinit var newsAdapter : NewsAdapter
             val isNotAtBeginnning = firstVisibleItemPosition >= 0
             val isTotalMoreThanVisible =
                 totalItemCount >= com.example.newsapp.Util.Constants.query_page_size
-            val shouldPaginate =
-                isNoErrors && isNotLoadingAndNotLastPage && isAtLastItem && isNotAtBeginnning && isTotalMoreThanVisible && isScrolling
+            val shouldPaginate = isNoErrors && isNotLoadingAndNotLastPage && isAtLastItem && isNotAtBeginnning && isTotalMoreThanVisible && isScrolling
 
             if (shouldPaginate) {
                 newsViewModel.getHeadlines("us")
